@@ -52,6 +52,12 @@ header {
   color: #ffffff;
 }
 
+@media (max-width: 1160px) {
+  header {
+    height: 60vh;
+  }
+}
+
 header .nav {
   padding: 2.5em 3em;
   display: flex;
@@ -89,6 +95,12 @@ header .heading_text {
   width: 45%;
   margin: 21em auto;
   text-align: center;
+}
+
+@media (max-width: 1160px) {
+  header .heading_text {
+    width: 60%;
+  }
 }
 
 header .heading_text p {
@@ -177,6 +189,12 @@ header .heading_text h3 {
 .section2 .content .card {
   border-radius: 1em;
   box-shadow: rgba(136, 136, 136, 0.25) 0px 6px 15px;
+}
+
+@media (max-width: 1160px) {
+  .section2 .content .card {
+    width: 30%;
+  }
 }
 
 .section2 .content .card .content_img {
@@ -276,27 +294,39 @@ header .heading_text h3 {
   justify-content: space-between;
 }
 
+.section3 .content_card .top_card .card {
+  width: 32%;
+}
+
 .section3 .content_card .bottom_card {
   margin-top: 1.5em;
   display: flex;
   justify-content: space-between;
 }
 
+.section3 .content_card .bottom_card .card {
+  width: 49%;
+}
+
 .section3 .content_card .card {
   color: white;
   border-radius: 6px;
-  width: 50%;
-  margin-right: 1.5em;
   padding: 2em;
 }
 
 .section3 .content_card .card h6 {
-  height: 30px;
+  height: 14%;
   line-height: 25px;
   font-size: 25px;
   font-weight: bold;
   width: 90%;
   margin-bottom: 2em;
+}
+
+@media (max-width: 1160px) {
+  .section3 .content_card .card h6 {
+    font-size: 24px;
+  }
 }
 
 .section3 .content_card .card span {
