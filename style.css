@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 body {
   position: relative;
-  font-family: "Open Sans" , sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-style: normal;
   margin-top: 0em !important;
   margin-bottom: 0rem !important;
@@ -83,26 +83,38 @@ header span {
 }
 
 header span .fa {
-  font-size: 2em !important;
-}
-
-header .logo img {
-  width: 90%;
+  font-size: 1.5em !important;
 }
 
 @media (max-width: 700px) {
-  header .logo img {
-    width: 50%;
+  header span .fa {
+    font-size: 1em !important;
   }
 }
 
+header span .fa-bars:after {
+  content: "\f00d";
+  font-weight: 900;
+}
+
 header .navbar {
-  padding: 2.5em 3em;
+  padding: 1.5em 3em;
 }
 
 @media (max-width: 700px) {
   header .navbar {
     padding: 1.5em;
+  }
+}
+
+header .navbar .logo img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 700px) {
+  header .navbar .logo img {
+    width: 70%;
   }
 }
 
@@ -134,6 +146,10 @@ header .navbar ul li a {
   color: #ffffff;
 }
 
+header .navbar ul li a:hover {
+  color: #ef0633;
+}
+
 @media (max-width: 991px) {
   header .navbar ul li a {
     text-align: center;
@@ -150,7 +166,13 @@ header .heading_social {
 
 @media (max-width: 991px) {
   header .heading_social {
-    top: 8%;
+    top: 4% !important;
+  }
+}
+
+@media (max-width: 700px) {
+  header .heading_social {
+    top: 2% !important;
   }
 }
 
@@ -167,19 +189,32 @@ header .heading_text {
 
 @media (max-width: 1160px) {
   header .heading_text {
-    width: 60%;
+    width: 60% !important;
   }
 }
 
 @media (max-width: 991px) {
   header .heading_text {
-    margin: 12em auto;
+    margin: 12em auto !important;
+  }
+}
+
+@media (max-width: 700px) {
+  header .heading_text {
+    width: 78% !important;
+    margin: 9em auto !important;
   }
 }
 
 header .heading_text p {
   font-size: 15px;
   letter-spacing: 0.5px;
+}
+
+@media (max-width: 700px) {
+  header .heading_text p {
+    display: none;
+  }
 }
 
 header .heading_text h3 {
@@ -189,7 +224,13 @@ header .heading_text h3 {
 
 @media (max-width: 991px) {
   header .heading_text h3 {
-    font-size: 31px;
+    font-size: 31px !important;
+  }
+}
+
+@media (max-width: 700px) {
+  header .heading_text h3 {
+    font-size: 28px !important;
   }
 }
 
@@ -234,6 +275,12 @@ header .heading_text h3 {
 @media (max-width: 991px) {
   .section1 .content .content_words .word2 {
     margin-top: 2em;
+  }
+}
+
+@media (max-width: 700px) {
+  .section1 .content .content_words .word2 {
+    display: block;
   }
 }
 
@@ -683,8 +730,8 @@ footer .content .bottom_content .rights p {
   font-size: 12px;
 }
 
-footer .content .bottom_content .policy span {
-  margin-right: 0.5em;
+footer .content .bottom_content .policy span strong {
+  padding: 0em 0.2em;
 }
 
 footer .content .bottom_content .social {

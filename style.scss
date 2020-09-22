@@ -1,17 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 $page-bg: #ffffff;
 $color-red: #ef0633;
 
-$tablet: 991px;
-@mixin tablet {
-  @media (max-width: #{$tablet}) {
-    @content;
-  }
-}
 $minitab: 700px;
 @mixin minitab {
   @media (max-width: #{$minitab}) {
+    @content;
+  }
+}
+
+$tablet: 991px;
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
     @content;
   }
 }
@@ -25,7 +26,7 @@ $tabletpro: 1160px;
 
 body {
   position: relative;
-  font-family:  "Open Sans" , sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-style: normal;
   margin-top: 0em !important;
   margin-bottom: 0rem !important;
@@ -60,70 +61,63 @@ hr {
   margin: 2em 0em;
   border: 0.1px solid #f99bad;
   opacity: 0.2;
-  @include tablet{
-    width:100% !important;
+  @include tablet {
+    width: 100% !important;
   }
-  
 }
 a {
   text-decoration: none;
   cursor: pointer;
 }
 
-
-
-
 header {
-  
-      background: url("images/Mask Group.png");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center center;
-      height: 130vh;
-      color: $page-bg;
-      @include tabletpro{
-        height: 60vh;
-      }
+  background: url("images/Mask Group.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 130vh;
+  color: $page-bg;
+  @include tabletpro {
+    height: 60vh;
+  }
   .container-fluid {
     padding: 0;
   }
 
-  .navbar-toggler{
-    border:none;
-    outline :none;
-
-    &:hover {
-      // border:2px solid $main-bk-green !important;
-    }
-    &:active {
-      // border:2px solid $main-bk-green !important;
-    }
-    
+  .navbar-toggler {
+    border: none;
+    outline: none;
   }
-  span{
-    color:$color-red;
-    .fa{
-      font-size:2em !important;;
+  span {
+    color: $color-red;
 
+    .fa {
+      font-size: 1.5em !important;
+      @include minitab {
+        font-size: 1em !important;
+      }
     }
-    
+      .fa-bars:after {
+        content: "\f00d";
+        font-weight:900;
+    }
   }
-  .logo{
+
+  .navbar {
+    padding: 1.5em 3em;
+    @include minitab {
+      padding: 1.5em;
+    }
+
+    .logo {
       img {
-        width: 90%;
+        width: 100%;
+        height: 100%;
         @include minitab {
-          width: 50%;
+          width: 70%;
         }
       }
-
-        }
-  .navbar {
-    padding: 2.5em 3em;
-    @include minitab {
-      padding: 1.5em; 
     }
-
-   
 
     .navbar-collapse {
       z-index: 20 !important;
@@ -131,36 +125,38 @@ header {
     ul {
       list-style: none;
       @include tablet {
-        margin:2em 0em;
+        margin: 2em 0em;
       }
 
       li {
-          padding: 0em 1em;
-          @include tablet {
-            padding:1em 0em;
+        padding: 0em 1em;
+        @include tablet {
+          padding: 1em 0em;
+        }
+        a {
+          color: $page-bg;
+          &:hover {
+            color: $color-red;
           }
-          a {
-            color: $page-bg;
-            &:hover {
-              // color: $main-bk-green;
-            }
-            @include tablet {
-              text-align: center;
-              font-size: 20px !important;
-            }
+          @include tablet {
+            text-align: center;
+            font-size: 20px !important;
           }
         }
+      }
     }
-
   }
   .heading_social {
     position: absolute;
     top: 10%;
     left: 0;
     padding: 0em 0.6em;
-    @include tablet{
-        top: 8%;
-      }
+    @include tablet {
+      top: 4% !important;
+    }
+    @include minitab {
+      top: 2% !important;
+    }
 
     a {
       font-size: 12px;
@@ -171,48 +167,53 @@ header {
     width: 45%;
     margin: 21em auto;
     text-align: center;
-    @include tabletpro{
-        width: 60%;
-      }
-      @include tablet{
-        margin: 12em auto;
-      }
+    @include tabletpro {
+      width: 60% !important;
+    }
+    @include tablet {
+      margin: 12em auto !important;
+    }
+    @include minitab {
+      width: 78% !important;
+      margin: 9em auto !important;
+    }
     p {
       font-size: 15px;
       letter-spacing: 0.5px;
+      @include minitab {
+        display: none;
+      }
     }
     h3 {
       font-size: 40px;
       font-weight: bold;
-      @include tablet{
-        font-size: 31px
+      @include tablet {
+        font-size: 31px !important;
+      }
+      @include minitab {
+        font-size: 28px !important;
       }
     }
   }
-
 }
 
 // section 1
 .section1 {
   width: 80%;
   margin: 3em auto;
-//   @include tablet{
-//     width: 90%;
-//   }
   .content {
     display: flex;
     justify-content: space-between;
-    @include tablet{
+    @include tablet {
       display: block;
-      }
-    
+    }
+
     .content_words {
-    
       flex-direction: column;
       display: flex;
       flex-basis: 47.5%;
       text-align: justify;
-      @include tablet{
+      @include tablet {
         margin: 2em 0em;
       }
       .word2 {
@@ -222,9 +223,12 @@ header {
         color: $color-red;
         font-size: 13px;
         text-align: left;
-        @include tablet{
-            margin-top: 2em ;
-          }
+        @include tablet {
+          margin-top: 2em;
+        }
+        @include minitab() {
+          display: block;
+        }
 
         .mission,
         .vision {
@@ -236,7 +240,6 @@ header {
           font-weight: bolder;
           font-size: 15px;
         }
-
       }
     }
     .content_image {
@@ -271,19 +274,19 @@ header {
   .content {
     display: flex;
     justify-content: space-between;
-    @include tablet{
-        display: block;
-      }
+    @include tablet {
+      display: block;
+    }
     .card {
       border-radius: 1em;
       box-shadow: rgba(136, 136, 136, 0.25) 0px 6px 15px;
 
-      @include tabletpro{
+      @include tabletpro {
         width: 30%;
       }
-      @include tablet{
-        width:100%;
-        margin:2em 0em;
+      @include tablet {
+        width: 100%;
+        margin: 2em 0em;
       }
       .content_img {
         color: $page-bg;
@@ -293,8 +296,6 @@ header {
           border-top-left-radius: 1em;
           height: 100%;
           width: 100%;
-          // border-top-left-radius: 14px;
-          // border-top-right-radius: 14px;
           object-fit: cover;
           object-position: center center;
         }
@@ -315,28 +316,22 @@ header {
         font-size: 12px;
         h6 {
           font-size: 15px;
-          //  padding:0.5em 0em;
         }
         p {
           color: $color-red;
           font-weight: bolder;
-          // margin:1em 0em;
         }
         span {
           display: block;
 
-          // color:$color-red;
           margin: 1em 0em !important;
         }
         button {
-          //  margin:1em 0em;
           border: 1px solid black;
           border-radius: 2em;
           font-size: 15px;
-          // color:$page-bg;
           padding: 0.8em;
           outline: none;
-          // border:none;
           background-color: $page-bg;
           font-weight: bold;
           width: 100%;
@@ -369,8 +364,7 @@ header {
     url("images/shutterstock_1414700966\ 1.png");
   color: white;
   padding: 8em;
-  @include tablet{
-    // padding: 3em 1em;
+  @include tablet {
   }
 
   p {
@@ -387,34 +381,32 @@ header {
       margin-top: 3em;
       display: flex;
       justify-content: space-between;
-      @include tablet{
+      @include tablet {
         display: block;
       }
-      .card{
+      .card {
         width: 32%;
-        
       }
     }
     .bottom_card {
       margin-top: 1.5em;
       display: flex;
       justify-content: space-between;
-      @include tablet{
+      @include tablet {
         display: block;
         margin-top: 0em;
       }
-      .card{
+      .card {
         width: 49%;
-        
       }
     }
     .card {
       color: white;
       border-radius: 6px;
       padding: 2em;
-      @include tablet{
+      @include tablet {
         width: 100% !important;
-        margin:1em 0em;
+        margin: 1em 0em;
       }
 
       h6 {
@@ -424,12 +416,12 @@ header {
         font-weight: bold;
         width: 90%;
         margin-bottom: 2em;
-        @include tabletpro{
-            font-size: 24px;
-          }
-          @include tablet{
-            font-size: 22px;
-          }
+        @include tabletpro {
+          font-size: 24px;
+        }
+        @include tablet {
+          font-size: 22px;
+        }
       }
       span {
         display: inline-block;
@@ -446,29 +438,22 @@ header {
 .section4 {
   width: 80%;
   margin: 6em auto;
-//   @include tablet{
-//     width: 95%;
-//   }
-
-  // h1{
-  //     width:40%;
 
   .content {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    @include tablet{
-        display: block;
-      }
+    @include tablet {
+      display: block;
+    }
     .card {
-      // height:140px;
       margin-bottom: 2em;
       width: 48%;
       display: flex;
       justify-content: space-between;
       flex-direction: row;
       background-color: rgba(242, 242, 242, 0.3);
-      @include tablet{
+      @include tablet {
         width: 100%;
       }
       .card_words {
@@ -493,7 +478,6 @@ header {
   }
 }
 
-
 footer {
   color: $page-bg;
   background-color: $color-red;
@@ -504,7 +488,7 @@ footer {
     position: absolute;
     top: -10%;
     right: 10%;
-    @include tablet{
+    @include tablet {
       top: -5%;
     }
     button {
@@ -532,61 +516,59 @@ footer {
     width: 88%;
     margin: auto;
     padding: 4em 4em 4em 0em;
-    @include tablet{
-        width: 80%;
-        padding: 4em 0em;
-        text-align: center !important;
-      }
+    @include tablet {
+      width: 80%;
+      padding: 4em 0em;
+      text-align: center !important;
+    }
     .top_content {
       margin: 4em 0em;
       display: flex;
       justify-content: space-between;
-      @include tablet{
+      @include tablet {
         display: block;
         margin-bottom: 2em;
       }
       .logo {
         img {
           width: 90%;
-          @include tablet{
+          @include tablet {
             width: 40%;
           }
         }
-        
       }
       .nav_link {
-        @include tablet{
-            margin:3em 0em;
-          }
+        @include tablet {
+          margin: 3em 0em;
+        }
         ul {
           display: flex;
           justify-content: space-between;
-          @include tablet{
-            padding:0em;
-            display: block;;
+          @include tablet {
+            padding: 0em;
+            display: block;
           }
 
           li {
-        
             text-decoration-style: none;
             list-style-type: none;
-            a{
-color:$page-bg
+            a {
+              color: $page-bg;
             }
-            strong{
-    padding: 0em 1em;
-    @include tablet{
-      display:none;
-    }
+            strong {
+              padding: 0em 1em;
+              @include tablet {
+                display: none;
+              }
             }
           }
         }
       }
       .address {
         text-align: right;
-        @include tablet{
-            text-align:center;
-          }
+        @include tablet {
+          text-align: center;
+        }
         p {
           font-size: 12px;
           a {
@@ -599,29 +581,30 @@ color:$page-bg
       display: flex;
       justify-content: space-between;
       font-size: 12px;
-      @include tablet{
-        flex-direction: column-reverse; 
+      @include tablet {
+        flex-direction: column-reverse;
       }
-     
-      .rights{
-        @include tablet{
-          margin:1em 0em;
+
+      .rights {
+        @include tablet {
+          margin: 1em 0em;
         }
         p {
           font-size: 12px;
         }
       }
-     .policy{
-     
-      span {
-        margin-right: 0.5em;
+      .policy {
+        span {
+          strong {
+            padding: 0em 0.2em;
+          }
+        }
       }
-     }
-     
+
       .social {
         text-decoration: none;
-        @include tablet{
-          margin:1em 0em;
+        @include tablet {
+          margin: 1em 0em;
         }
         a {
           padding: 0em 1em;
