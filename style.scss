@@ -90,6 +90,10 @@ header {
   }
   span {
     color: $color-red;
+    // &:active {
+        
+    //   color: $page-bg;
+    // }
 
     .fa {
       font-size: 1.5em !important;
@@ -97,10 +101,7 @@ header {
         font-size: 1em !important;
       }
     }
-      .fa-bars:after {
-        content: "\f00d";
-        font-weight:900;
-    }
+   
   }
 
   .navbar {
@@ -133,6 +134,9 @@ header {
         @include tablet {
           padding: 1em 0em;
         }
+        @include minitab {
+          padding: 0.5em 0em;
+        }
         a {
           color: $page-bg;
           &:hover {
@@ -155,7 +159,7 @@ header {
       top: 4% !important;
     }
     @include minitab {
-      top: 2% !important;
+      top: 3% !important;
     }
 
     a {
@@ -174,7 +178,7 @@ header {
       margin: 12em auto !important;
     }
     @include minitab {
-      width: 78% !important;
+      width: 68% !important;
       margin: 9em auto !important;
     }
     p {
@@ -362,11 +366,17 @@ header {
       rgba(0, 33, 71, 0.5)
     ),
     url("images/shutterstock_1414700966\ 1.png");
-  color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: white;
   padding: 8em;
   @include tablet {
+    padding: 4em 8em;
   }
-
+  @include minitab() {
+    padding: 2em;
+  }
   p {
     font-size: 12px;
   }
@@ -459,6 +469,9 @@ header {
       .card_words {
         width: 50%;
         margin: auto;
+        @include minitab {
+          text-align: center;
+        }
         p {
           font-size: 14px;
           color: $color-red;

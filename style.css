@@ -92,11 +92,6 @@ header span .fa {
   }
 }
 
-header span .fa-bars:after {
-  content: "\f00d";
-  font-weight: 900;
-}
-
 header .navbar {
   padding: 1.5em 3em;
 }
@@ -142,6 +137,12 @@ header .navbar ul li {
   }
 }
 
+@media (max-width: 700px) {
+  header .navbar ul li {
+    padding: 0.5em 0em;
+  }
+}
+
 header .navbar ul li a {
   color: #ffffff;
 }
@@ -172,7 +173,7 @@ header .heading_social {
 
 @media (max-width: 700px) {
   header .heading_social {
-    top: 2% !important;
+    top: 3% !important;
   }
 }
 
@@ -201,7 +202,7 @@ header .heading_text {
 
 @media (max-width: 700px) {
   header .heading_text {
-    width: 78% !important;
+    width: 68% !important;
     margin: 9em auto !important;
   }
 }
@@ -428,8 +429,23 @@ header .heading_text h3 {
 
 .section3 {
   background-image: linear-gradient(to right bottom, rgba(0, 33, 71, 0.5), rgba(0, 33, 71, 0.5)), url("images/shutterstock_1414700966 1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   color: white;
   padding: 8em;
+}
+
+@media (max-width: 991px) {
+  .section3 {
+    padding: 4em 8em;
+  }
+}
+
+@media (max-width: 700px) {
+  .section3 {
+    padding: 2em;
+  }
 }
 
 .section3 p {
@@ -557,6 +573,12 @@ header .heading_text h3 {
 .section4 .content .card .card_words {
   width: 50%;
   margin: auto;
+}
+
+@media (max-width: 700px) {
+  .section4 .content .card .card_words {
+    text-align: center;
+  }
 }
 
 .section4 .content .card .card_words p {
