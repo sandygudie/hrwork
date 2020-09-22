@@ -483,6 +483,7 @@ header .heading_text h3 {
 .section4 .content {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 991px) {
@@ -663,8 +664,13 @@ footer .content .top_content .address p a {
 footer .content .bottom_content {
   display: flex;
   justify-content: space-between;
-  flex-direction: column-reverse;
   font-size: 12px;
+}
+
+@media (max-width: 991px) {
+  footer .content .bottom_content {
+    flex-direction: column-reverse;
+  }
 }
 
 @media (max-width: 991px) {

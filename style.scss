@@ -456,7 +456,7 @@ header {
   .content {
     display: flex;
     justify-content: space-between;
-    // flex-wrap: wrap;
+    flex-wrap: wrap;
     @include tablet{
         display: block;
       }
@@ -598,8 +598,11 @@ color:$page-bg
     .bottom_content {
       display: flex;
       justify-content: space-between;
-      flex-direction: column-reverse;
       font-size: 12px;
+      @include tablet{
+        flex-direction: column-reverse; 
+      }
+     
       .rights{
         @include tablet{
           margin:1em 0em;
