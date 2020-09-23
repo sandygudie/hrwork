@@ -80,37 +80,12 @@ header {
   @include tabletpro {
     height: 60vh;
   }
-  .container-fluid {
-    padding: 0;
-  }
-
-  .navbar-toggler {
-    border: none;
-    outline: none;
-  }
-  span {
-    color: $color-red;
-    // &:active {
-        
-    //   color: $page-bg;
-    // }
-
-    .fa {
-      font-size: 1.5em !important;
-      @include minitab {
-        font-size: 1em !important;
-      }
-    }
-   
-  }
-
   .navbar {
     padding: 1.5em 3em;
     @include minitab {
       padding: 1.5em;
     }
-
-    .logo {
+    .navbar-brand {
       img {
         width: 100%;
         height: 100%;
@@ -119,12 +94,32 @@ header {
         }
       }
     }
-
-    .navbar-collapse {
-      z-index: 20 !important;
+    .navbar-toggler {
+      border: none;
+      outline: none;
+      color: $color-red;
+      .fa {
+        font-size: 1.5em !important;
+        @include minitab {
+          font-size: 1em !important;
+        }
+      }
+    }
+    .close {
+      color: $color-red;
+      text-shadow: none;
+      opacity: 1;
+    }
+    .navbar-toggler > .close {
+      display: inline;
+    }
+    .navbar-toggler.collapsed > .close,
+    .navbar-toggler:not(.collapsed) > .navbar-toggler-icon {
+      display: none;
     }
     ul {
       list-style: none;
+      padding: 0em !important;
       @include tablet {
         margin: 2em 0em;
       }
@@ -200,7 +195,6 @@ header {
     }
   }
 }
-
 // section 1
 .section1 {
   width: 80%;
@@ -366,10 +360,10 @@ header {
       rgba(0, 33, 71, 0.5)
     ),
     url("images/shutterstock_1414700966\ 1.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: white;
   padding: 8em;
   @include tablet {
     padding: 4em 8em;

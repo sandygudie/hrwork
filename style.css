@@ -69,29 +69,6 @@ header {
   }
 }
 
-header .container-fluid {
-  padding: 0;
-}
-
-header .navbar-toggler {
-  border: none;
-  outline: none;
-}
-
-header span {
-  color: #ef0633;
-}
-
-header span .fa {
-  font-size: 1.5em !important;
-}
-
-@media (max-width: 700px) {
-  header span .fa {
-    font-size: 1em !important;
-  }
-}
-
 header .navbar {
   padding: 1.5em 3em;
 }
@@ -102,23 +79,51 @@ header .navbar {
   }
 }
 
-header .navbar .logo img {
+header .navbar .navbar-brand img {
   width: 100%;
   height: 100%;
 }
 
 @media (max-width: 700px) {
-  header .navbar .logo img {
+  header .navbar .navbar-brand img {
     width: 70%;
   }
 }
 
-header .navbar .navbar-collapse {
-  z-index: 20 !important;
+header .navbar .navbar-toggler {
+  border: none;
+  outline: none;
+  color: #ef0633;
+}
+
+header .navbar .navbar-toggler .fa {
+  font-size: 1.5em !important;
+}
+
+@media (max-width: 700px) {
+  header .navbar .navbar-toggler .fa {
+    font-size: 1em !important;
+  }
+}
+
+header .navbar .close {
+  color: #ef0633;
+  text-shadow: none;
+  opacity: 1;
+}
+
+header .navbar .navbar-toggler > .close {
+  display: inline;
+}
+
+header .navbar .navbar-toggler.collapsed > .close,
+header .navbar .navbar-toggler:not(.collapsed) > .navbar-toggler-icon {
+  display: none;
 }
 
 header .navbar ul {
   list-style: none;
+  padding: 0em !important;
 }
 
 @media (max-width: 991px) {
