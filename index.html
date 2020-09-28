@@ -17,18 +17,10 @@
 <body>
     <!-- Header -->
     <header>
-        <nav class="navbar  navbar-expand-lg">
+        <nav class="navbar">
             <a href="#home" class="navbar-brand" class="logo">
                 <img src="images/HR Work Logo.svg" alt="logo" />
             </a>
-
-            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
-                data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="my-1 mx-2 close">X</span>
-                <span class="navbar-toggler-icon"> <i class="fa fa-bars" aria-hidden="true"></i></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav ml-auto px-5">
                     <li>
                         <a class="nav-link" href="#Who">Who We Are</a>
@@ -46,8 +38,43 @@
                         <a href="#Contact" class="nav-link">Contact</a>
                     </li>
                 </ul>
-            </div>
+           
+             <span  onclick ="openNav()"> <i class="fa fa-bars" ></i></span>
+             <!-- <span  >&#9776</span> -->
         </nav>
+<!-- side nav -->
+        <div id ="mySidenav" class="side_nav">
+     
+            <a href = "javascript:void(0)" class ="closebtn"
+            onclick ="closeNav()">&times;</a>
+                  
+            <div >
+                <ul>
+                    <li>
+                        <a class="nav-link" href="#Who">Who We Are</a>
+                    </li>
+                    <hr>
+                    <li>
+                        <a class="nav-link" href="#Packages">Packages</a>
+                    </li>
+                    <hr>
+                    <li>
+                        <a href="#Blog" class="nav-link"> Blog</a>
+                    </li>
+                    <hr>
+                    <li>
+                        <a class="nav-link" href="#Careers">Careers</a>
+                    </li>
+                    <hr>
+                    <li>
+                        <a href="#Contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+     
         <div class="heading_social">
             <a><i class="fab fa-facebook-f"></i></a>
             <a><i class="fab fa-instagram"></i></a>
@@ -123,7 +150,7 @@
                 <div class="content_words">
                     <h6>HR Remote Manager</h6>
                     <p>
-                        <bold>&#8358</bold> 3,480
+                        <bold>&#8358</bold>3,480
                     </p>
                     <span>Basic, Bronze,Foundation</span>
                     <button>Add to Cart</button>
@@ -139,7 +166,7 @@
                 <div class="content_words">
                     <h6>HR Remote Manager</h6>
                     <p>
-                        <bold>&#8358</bold> 3,480
+                        <bold>&#8358</bold>3,480
                     </p>
                     <span>Basic, Bronze,Foundation</span>
                     <button>Add to Cart</button>
@@ -156,7 +183,7 @@
                 <div class="content_words">
                     <h6>HR Remote Manager</h6>
                     <p>
-                        <bold>&#8358</bold> 3,480
+                        <bold>&#8358</bold>3,480
                     </p>
                     <span>Basic, Bronze,Foundation</span>
                     <button>Add to Cart</button>
@@ -337,6 +364,8 @@
 
     </footer>
 
+  
+    
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -348,7 +377,9 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
 
-
+        <script src="app.js">
+            
+        </script>
 </body>
 
 </html>

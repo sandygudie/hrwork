@@ -28,9 +28,6 @@ body {
   position: relative;
   font-family: "Open Sans", sans-serif;
   font-style: normal;
-  margin-top: 0em !important;
-  margin-bottom: 0rem !important;
-  padding: 0em !important;
   line-height: 25px;
 }
 p {
@@ -39,15 +36,32 @@ p {
   margin-bottom: 0rem;
   padding: 0em;
 }
+
+html,
+body,
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
-  margin-top: 0em;
-  margin-bottom: 0rem;
-  padding: 0em;
+h6,
+p,
+ul,
+li {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+a {
+    text-decoration: none;
+    
+    &:hover {
+        text-decoration: none;
+    }
+}
+ul,
+li {
+    list-style: none;
 }
 .fas {
   padding: 0em 0.8em;
@@ -65,20 +79,19 @@ hr {
     width: 100% !important;
   }
 }
-a {
-  text-decoration: none;
-  cursor: pointer;
-}
+
 
 header {
-  background: url("images/Mask Group.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  height: 130vh;
+  // background: url();
+  background: url("images/Mask Group.png") top/cover fixed no-repeat;
+
+  height: 100vh;
   color: $page-bg;
   @include tabletpro {
-    height: 60vh;
+    height: 90vh;
+  }
+  @include minitab {
+    height: 85vh;
   }
   .navbar {
     padding: 1.5em 3em;
@@ -94,36 +107,18 @@ header {
         }
       }
     }
-    .navbar-toggler {
-      border: none;
-      outline: none;
-      color: $color-red;
-      .fa {
-        font-size: 1.5em !important;
-        @include minitab {
-          font-size: 1em !important;
-        }
-      }
-    }
-    .close {
-      color: $color-red;
-      text-shadow: none;
-      opacity: 1;
-    }
-    .navbar-toggler > .close {
-      display: inline;
-    }
-    .navbar-toggler.collapsed > .close,
-    .navbar-toggler:not(.collapsed) > .navbar-toggler-icon {
-      display: none;
-    }
+ 
     ul {
+      width:40%;
       list-style: none;
       padding: 0em !important;
+      display:flex;
+      flex-direction: row;
+      justify-content: space-between;
       @include tablet {
-        margin: 2em 0em;
-      }
+       display:none
 
+      }
       li {
         padding: 0em 1em;
         @include tablet {
@@ -144,7 +139,69 @@ header {
         }
       }
     }
+    span{
+      font-size:30px;
+      cursor:pointer;
+      color:$color-red;
+      display:none;
+      @include tablet {
+        display:block;
+      }
+    }
   }
+  // side nav
+  .side_nav{
+display: none;
+
+@include tablet {
+  height: 100%;
+width:0px;
+position:fixed;
+z-index: 1;
+top:0;
+right:0;
+background-color:rgb(46, 45, 45);
+
+overflow-x: hidden;
+transition:0.5s;
+padding-top:60px;
+ display:block;
+}
+
+
+ul{
+  margin:2em 0em !important;
+  text-align: center;
+  li a{
+    padding: 1em;
+    text-decoration:none;
+    font-size:20px;
+    color:white;
+    display:block;
+    transition:0.3s;
+    &:hover{
+      background-color:$color-red;
+    }
+  }
+  hr{
+    margin:0.5em 0em!important;
+    border: 0.1px solid rgb(131, 130, 130) !important;
+  }
+}
+ 
+
+.closebtn{
+  position:absolute;
+  top:4%;
+  right:25px;
+  font-size:50px;
+  margin-left:50px;
+  color:$color-red;
+  transition:0.3s;
+
+}
+  }
+
   .heading_social {
     position: absolute;
     top: 10%;
@@ -160,6 +217,7 @@ header {
     a {
       font-size: 12px;
       display: block;
+      padding:0.3em 0em;
     }
   }
   .heading_text {
@@ -169,23 +227,22 @@ header {
     @include tabletpro {
       width: 60% !important;
     }
+   
     @include tablet {
-      margin: 12em auto !important;
+      margin: 60% auto !important;
     }
     @include minitab {
-      width: 68% !important;
-      margin: 9em auto !important;
+      width: 76% !important;
+      
     }
     p {
-      font-size: 15px;
+      font-size: 18px;
       letter-spacing: 0.5px;
-      @include minitab {
-        display: none;
-      }
     }
     h3 {
       font-size: 40px;
       font-weight: bold;
+      margin-top:0.5em !important;
       @include tablet {
         font-size: 31px !important;
       }
@@ -264,10 +321,10 @@ header {
   }
 }
 
-// section 1
+// section 2
 .section2 {
   width: 80%;
-  margin: 7em auto 5em auto;
+  margin: 5em auto 3em auto;
 
   .content {
     display: flex;
@@ -353,6 +410,7 @@ header {
   }
 }
 
+// section 3
 .section3 {
   background-image: linear-gradient(
       to right bottom,
@@ -366,7 +424,7 @@ header {
   color: white;
   padding: 8em;
   @include tablet {
-    padding: 4em 8em;
+    padding: 4em ;
   }
   @include minitab() {
     padding: 2em;
@@ -419,7 +477,7 @@ header {
         font-size: 25px;
         font-weight: bold;
         width: 90%;
-        margin-bottom: 2em;
+        margin-bottom: 2em !important; 
         @include tabletpro {
           font-size: 24px;
         }
@@ -441,7 +499,7 @@ header {
 // section4
 .section4 {
   width: 80%;
-  margin: 6em auto;
+  margin: 5em auto;
 
   .content {
     display: flex;
@@ -460,27 +518,42 @@ header {
       @include tablet {
         width: 100%;
       }
+      @include minitab {
+     padding:1em !important;
+
+      }
       .card_words {
         width: 50%;
         margin: auto;
         @include minitab {
-          text-align: center;
+          // text-align: center;
+          width:90%;
         }
         p {
           font-size: 14px;
           color: $color-red;
           font-weight: bold;
           line-height: 20px;
+          @include minitab {
+            font-size: 12px;
+          }
         }
+
         span {
           font-size: 10px;
           display: inline-block;
         }
       }
       .card_img {
-        object-fit: cover;
-        object-position: center center;
+        
+        // width:50%;
+         img {
+          object-fit: cover;
+          object-position: center center;
+          width:100%;
+        }
       }
+      
     }
   }
 }
